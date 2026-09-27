@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vincent Meh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#12151c; --paper:#eeefe8; --paper-2:#e4e5dc;
+  --red:#a8382b; --navy:#233450; --line:#c9cabf;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:'Inter',sans-serif; line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Fraunces',serif; font-weight:500; letter-spacing:-0.01em;}
+a{color:inherit;}
+.wrap{max-width:920px; margin:0 auto; padding:0 28px;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+
+/* nav */
+nav{position:sticky; top:0; background:rgba(238,239,232,0.92); backdrop-filter:blur(6px); border-bottom:1px solid #d3d4c9; z-index:10;}
+nav .wrap{display:flex; justify-content:space-between; align-items:center; height:60px;}
+nav .name{font-family:'Fraunces',serif; font-weight:500; font-size:1.05rem;}
+nav ul{display:flex; gap:26px; list-style:none;}
+nav a{font-size:0.9rem; text-decoration:none; color:#4a4d40;}
+nav a:hover{color:var(--ink);}
+
+/* hero */
+.hero{padding:76px 0 56px; border-bottom:1px solid #d3d4c9;}
+.hero .wrap{display:flex; gap:48px; align-items:flex-end; flex-wrap:wrap;}
+.hero-text{flex:1 1 420px;}
+.hero-text .kicker{font-size:0.82rem; color:var(--red); font-weight:600; margin-bottom:14px;}
+.hero-text h1{font-size:clamp(2.4rem,6vw,4rem); line-height:0.98;}
+.hero-text p.lede{margin-top:20px; font-size:1.1rem; max-width:46ch; color:#33362d;}
+.hero-cta{margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;}
+.btn{display:inline-block; padding:11px 20px; border-radius:2px; text-decoration:none; font-size:0.92rem; font-weight:500;}
+.btn-primary{background:var(--ink); color:var(--paper);}
+.btn-outline{border:1px solid var(--ink);}
+.hero-photo{width:210px; flex-shrink:0;}
+.hero-photo img{width:100%; display:block; filter:grayscale(15%);}
+
+/* stats ticker */
+.ticker{border-bottom:1px solid #d3d4c9; background:var(--paper-2);}
+.ticker .wrap{display:flex; flex-wrap:wrap; gap:0;}
+.stat{flex:1 1 140px; padding:20px 24px; border-left:1px solid #d3d4c9;}
+.stat:first-child{border-left:none;}
+.stat .n{font-family:'IBM Plex Mono',monospace; font-size:1.5rem; color:var(--red);}
+.stat .l{font-size:0.78rem; color:#5c5f52; margin-top:2px;}
+
+section{padding:60px 0;}
+section + section{border-top:1px solid #d3d4c9;}
+.section-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:32px;}
+.section-head h2{font-size:1.7rem;}
+.section-head .count{font-size:0.8rem; color:#7a7d6d;}
+
+.role{display:grid; grid-template-columns:170px 1fr; gap:24px; padding:22px 0; border-top:1px solid #dcddd2;}
+.role:first-of-type{border-top:none;}
+.role .when{font-size:0.85rem; color:#6b6e5f;}
+.role .org{font-weight:600; font-size:1.05rem;}
+.role .title{color:#5c5f52; font-size:0.92rem; margin-bottom:8px;}
+.role ul{padding-left:18px; font-size:0.94rem; color:#33362d;}
+.role li{margin-bottom:5px;}
+
+.split{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+@media(max-width:680px){.split{grid-template-columns:1fr;} .role{grid-template-columns:1fr;} .hero .wrap{flex-direction:column-reverse;} .hero-photo{width:150px;}}
+
+.edu-item{margin-bottom:22px;}
+.edu-item .org{font-weight:600;}
+.edu-item .when{font-size:0.85rem; color:#6b6e5f;}
+.edu-item .detail{font-size:0.9rem; color:#4a4d40; margin-top:4px;}
+
+.taglist{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+.tag{border:1px solid #b8b9ad; padding:5px 11px; font-size:0.82rem; border-radius:2px;}
+
+footer{padding:60px 0 70px;}
+footer h2{font-size:2rem; max-width:14ch;}
+footer .contacts{margin-top:26px; display:flex; flex-direction:column; gap:8px; font-size:1rem;}
+footer .contacts a{text-decoration:underline; text-decoration-color:#b8b9ad; text-underline-offset:3px;}
+footer .bottom{margin-top:50px; font-size:0.8rem; color:#7a7d6d; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="name">Vincent Meh</div>
+  <ul>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#beyond">Beyond the Desk</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="hero-text">
+    <div class="kicker">KINGSTON, ON — B.COMM CANDIDATE, SMITH SCHOOL OF BUSINESS</div>
+    <h1>Vincent Meh</h1>
+    <p class="lede">I study markets the way I trained for kata: one repetition, one correction at a time. Currently building FX and equity allocation models at OMERS Capital Markets — previously a national-team karate competitor across two Pan American Championships.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="mailto:vincent.meh@queensu.ca">Get in touch</a>
+      <a class="btn btn-outline" href="https://www.linkedin.com/in/vincent-meh" target="_blank">LinkedIn ↗</a>
+    </div>
+  </div>
+  <div class="hero-photo"><img src="headshot.jpg" alt="Vincent Meh"></div>
+</div></header>
+
+<div class="ticker"><div class="wrap">
+  <div class="stat"><div class="n">500+</div><div class="l">APAC funds benchmarked at OMERS</div></div>
+  <div class="stat"><div class="n">$1.86M</div><div class="l">AUM managed, Queen's Capital</div></div>
+  <div class="stat"><div class="n">100+</div><div class="l">Karate medals, regional to international</div></div>
+  <div class="stat"><div class="n">2</div><div class="l">Pan American Championships, Team Canada</div></div>
+</div></div>
+
+<section id="experience"><div class="wrap">
+  <div class="section-head"><h2>Professional Experience</h2></div>
+
+  <div class="role">
+    <div class="when mono">Summer 2024<br>Toronto, ON</div>
+    <div>
+      <div class="org">OMERS Capital Markets</div>
+      <div class="title">Intern Analyst, Portfolio Construction</div>
+      <ul>
+        <li>Developed an FX hedging recommendation to strengthen the international asset book</li>
+        <li>Built a 3–5 year strategic equity allocation plan aligned with prevailing market trends</li>
+        <li>Benchmarked 500+ APAC funds against OMERS' holdings using eVestment to isolate performance drivers</li>
+        <li>Presented capital allocation analysis across economic regimes, targeting a 7% drawdown</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="role">
+    <div class="when mono">Summer 2023<br>Toronto, ON</div>
+    <div>
+      <div class="org">SunLife Financial Services</div>
+      <div class="title">Insurance Service Analyst</div>
+      <ul>
+        <li>Assessed SunLife's financial stability to inform investment due diligence</li>
+        <li>Reviewed contracts spanning cheques, mortgages, endowments, and insurance obligations</li>
+        <li>Processed 400+ policies across insurance functions with close attention to regulatory detail</li>
+        <li>Applied data analysis to renewal, premium allocation, and acquisition decisions</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="beyond"><div class="wrap">
+  <div class="section-head"><h2>Beyond the Desk</h2></div>
+
+  <div class="role">
+    <div class="when mono">2023 – Present<br>Kingston, ON</div>
+    <div>
+      <div class="org">Queen's Capital</div>
+      <div class="title">Analyst</div>
+      <ul>
+        <li>Selected into Queen's Capital's student-run investment club, managing a $1.86M mock portfolio of CAD/U.S. equities</li>
+        <li>Pitched 7 successful stock recommendations in the industrial sector after evaluating financial statements and allocation opportunities</li>
+        <li>Completed a 12-week program spanning screening, thesis generation, DCF, comparables, and a culminating stock pitch</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="role">
+    <div class="when mono">2010 – 2022<br>Ottawa, ON</div>
+    <div>
+      <div class="org">Team Canada</div>
+      <div class="title">Karate Competitor — Men's Kata</div>
+      <ul>
+        <li>Earned 100+ awards across regional, national, and international championships</li>
+        <li>One of two athletes selected from 200 Canadian competitors to represent Canada at the 2018 and 2019 Pan American Championships, finishing top 12 internationally</li>
+        <li>Completed three consecutive years of invitational national training for prospective Olympians, sponsored by Team Canada</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <div class="section-head"><h2>Education</h2></div>
+  <div class="split">
+    <div>
+      <div class="edu-item">
+        <div class="org">Queen's University, Smith School of Business</div>
+        <div class="when">Bachelor of Commerce · Class of 2025 · Kingston, ON</div>
+        <div class="detail">Mathematical Analysis (A+), Business Technology (A+), Intro to Finance (A), Intro to Financial Accounting (A)</div>
+        <div class="detail">Dean Connor Sun Life Scholarship ($5,000) · SIC Equity Grant Award ($700)</div>
+      </div>
+      <div class="edu-item">
+        <div class="org">Holy Trinity Catholic High School</div>
+        <div class="when">Ontario Secondary School Diploma · Class of 2021 · Ottawa, ON</div>
+        <div class="detail">Ontario Scholar, Honour Roll, Academic Merit Award, Immersion French FSL Certificate</div>
+      </div>
+    </div>
+    <div>
+      <div class="edu-item">
+        <div class="org">Currently</div>
+        <div class="detail">CFA Level I Candidate · Investment Banking Preparatory Program · Smith Black Business Association</div>
+      </div>
+      <div class="edu-item">
+        <div class="org">Technical Skills</div>
+        <div class="taglist">
+          <span class="tag">VBA</span><span class="tag">CapIQ</span><span class="tag">Figma</span>
+          <span class="tag">eVestments</span><span class="tag">Power BI</span><span class="tag">HubSpot</span><span class="tag">Bloomberg</span>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="org">Languages</div>
+        <div class="detail">Native fluency — French and English</div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<footer id="contact"><div class="wrap">
+  <h2>Let's talk markets, or kata.</h2>
+  <div class="contacts">
+    <a href="mailto:vincent.meh@queensu.ca">vincent.meh@queensu.ca</a>
+    <a href="tel:6132180726">613-218-0726</a>
+    <a href="https://www.linkedin.com/in/vincent-meh" target="_blank">linkedin.com/in/vincent-meh</a>
+  </div>
+  <div class="bottom">
+    <span>© 2026 Vincent Meh</span>
+    <span>Kingston, ON</span>
+  </div>
+</div></footer>
+
+</body>
+</html>
